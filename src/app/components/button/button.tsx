@@ -1,15 +1,12 @@
 import React from "react";
+import styles from "./button.module.scss";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
-   * Design choices for the button
-   */
-  design?: "outlined" | "filled";
-  /**
    * Variant choices for the button
    */
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "filled" | "outlined" | "text" | "elevated" | "tonal";
   /**
    * Optional click handler
    */
@@ -17,18 +14,17 @@ export interface ButtonProps
 }
 
 /**
- * Primary UI component for user interaction
+ * Button component for user interaction
  */
 export const Button = ({
-  design = "filled",
-  variant = "primary",
+  variant = "filled",
   handleClick,
   children,
   ...rest
 }: ButtonProps) => {
   return (
     <button
-      className={`base ${design} ${variant}`}
+      className={`${styles.base} ${styles[variant]}`}
       onClick={handleClick}
       {...rest}
     >
