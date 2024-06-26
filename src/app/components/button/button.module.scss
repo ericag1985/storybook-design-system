@@ -9,20 +9,23 @@
   border: 1px solid var(--button-border-color, var(--button-bg-color));
   border-radius: var(
     --button-border-radius,
-    calc(100 / 16 * 1rem)
-  ); // 100px converted to rem
+    calc(100 / var(--rem-base) * 1rem)
+  );
   box-shadow: var(--button-box-shadow);
   color: var(--button-text-color);
-  gap: var(--button-gap, calc(8 / 16 * 1rem)); // 8px converted to rem
+  gap: var(
+    --button-gap,
+    calc(8 / var(--rem-base) * 1rem)
+  ); // 8px converted to rem
   padding: var(
     --button-padding,
-    calc(10 / 16 * 1rem) calc(24 / 16 * 1rem)
+    calc(10 / var(--rem-base) * 1rem) calc(24 / var(--rem-base) * 1rem)
   ); // 10px 24px converted to rem
   transition: background-color var(--transition-speed),
     border-color var(--transition-speed), box-shadow var(--transition-speed);
 
   // These are the same for all disabled buttons per the design spec.
-  font-size: calc(14 / 16 * 1rem); // 14px converted to rem
+  font-size: calc(14 / var(--rem-base) * 1rem); // 14px converted to rem
   font-weight: 600;
 
   &:hover {
@@ -65,14 +68,20 @@
   --button-box-shadow-hover: var(--box-shadow-button-hover);
 }
 
-// .outlined {
-// }
+.outlined {
+  --button-bg-color: var(--color-white);
+  --button-bg-color-hover: var(--color-surface);
+  --button-bg-color-focus: var(--color-surface);
+  --button-bg-color-disabled: var(--color-surface);
+  --button-border-color: var(--color-primary);
+  --button-text-color: var(--color-primary);
+}
 
-// .text {
-// }
+.text {
+  --button-padding: 0;
+  --button-text-color: var(--color-primary);
 
-// .elevated {
-// }
-
-// .tonal {
-// }
+  &:hover {
+    text-decoration: underline;
+  }
+}

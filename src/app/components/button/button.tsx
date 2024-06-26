@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./button.module.scss";
+import { ButtonVariants } from "./types";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * Variant choices for the button
    */
-  variant?: "filled" | "outlined" | "text" | "elevated" | "tonal";
+  variant?: ButtonVariants;
   /**
    * Optional click handler
    */
@@ -17,7 +18,7 @@ export interface ButtonProps
  * Button component for user interaction
  */
 export const Button = ({
-  variant = "filled",
+  variant = ButtonVariants.Filled,
   handleClick,
   children,
   ...rest

@@ -2,14 +2,8 @@
   // Colors
   --color-primary: #00344c;
   --color-primary-dark: #001e2e;
-  // --color-secondary: ;
-  // --color-tertiary: ;
   --color-surface: #d9dadc;
   --color-surface-dark: #191c1e;
-  // --color-error: ;
-  // --color-warning: ;
-  // --color-success: ;
-  // --color-information: ;
   --color-white: #ffffff;
 
   // Shadows
@@ -17,4 +11,7 @@
 
   // Animation
   --transition-speed: 200ms;
+
+  // Size
+  --rem-base: 16;
 }
